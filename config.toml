@@ -1,0 +1,205 @@
+################################# Basic configuration #########################
+# Documentation: https://gohugo.io/getting-started/configuration/#all-configuration-settings
+baseURL = "https://d2onfi2sda5gqy.cloudfront.net"
+title = "Soma | Invest, Borrow, Grow"
+theme = "airspace"
+# Number of posts per page in list view
+paginate = "4"
+# Post excerpt length
+summaryLength = "30"
+# Disabled languages
+disableLanguages = []
+# Short name to enable Disqus comments
+disqusShortname = "" # Get your shortname from here: https://disqus.com/profile/signup/
+# Measurement ID (G-XXXXXXX) to enable Google Analytics
+googleAnalytics = ""
+
+[[deployment.targets]]
+#S3 Bucket Deployment
+name = "awsbucket"
+URL = "s3://somaloans.com/?region=us-west-1"
+
+
+
+############################# Modules ##############################
+[module.hugoVersion]
+extended = true
+min = "0.83.1"
+
+
+################################# Output formats ##############################
+# Documentation: https://gohugo.io/templates/output-formats/#customizing-output-formats
+
+[outputs]
+home = [ "HTML" ]
+
+
+################################# Markup ######################################
+# Documentation: https://gohugo.io/getting-started/configuration-markup
+
+[markup.goldmark.renderer]
+# Allow "unsafe" HTML in Markdown
+unsafe = true
+
+[markup.tableOfContents]
+startLevel = 2
+endLevel = 6
+ordered = false
+
+
+################################# Default parameters ##########################
+[params]
+logo = "images/logo4.png"
+logo_width = "150px"
+# OpenGraph / Twitter Card metadata
+description = "This is meta description"
+author = "Soma Loans, Inc."
+image = "images/logo4.png" # this image will be used as fallback if a page has no image of its own
+
+
+################################# Sidebar widgets #############################
+[params.widgets]
+sidebar = ["recent_posts", "taxonomy_category", "taxonomy_tags"]
+
+
+################################# Contact page ################################
+[params.contact]
+# Address block
+phone = "(707) 326-9776"
+email = "info@somaloans.com"
+location = """
+**Soma Loans, Inc.**  
+Davis, California, 
+United States
+"""
+# Whether to display text descriptors (like "E-mail: ", "Phone: ") before the address block elements
+address_descriptors = false
+[params.contact.form]
+enable = true
+# Whether to use [Netlify Forms](https://docs.netlify.com/forms/setup/)
+use_netlify = true
+# Form action
+## Fill in your Form ID URL for Formspree.io, e.g. `https://formspree.io/f/{form_id}`
+## Ignored if `use_netlify = true` (custom [success page](https://docs.netlify.com/forms/setup/#success-messages) is already included) 
+action = "https://formspree.io/f/mwkylaan"
+method="POST"
+# Image on custom success page `/message_sent.html`
+success_image = "images/favicon.png"
+
+
+################################# Google map ##################################
+[params.gmap]
+enable = true
+gmap_api = "AIzaSyD-wt46042sTvziC6HRSLp9PYqn5qH1eB0"
+map_latitude = "38.5449"
+map_longitude = "-121.7405"
+map_marker = "images/marker.png"
+
+
+################################# Preloader ###################################
+[params.preloader]
+enable = true
+preloader = "" # use .png , .svg or .gif image
+
+
+################################# Cookies #####################################
+[params.cookies]
+enable = true
+expire_days = 2
+
+
+################################# counter.dev analytics #######################
+# This is a [privacy-friendly alternative](https://counter.dev/privacy.html) to Google Analytics & Co.
+[params.counter]
+enable = true
+# counter.dev username, see https://counter.dev/setup.html
+username = ""
+
+
+################################# Social Media ################################
+
+[[params.social]]
+icon = "ion-social-linkedin-outline" #ionicon pack v2 : https://ionicons.com/v2/
+link = "https://www.linkedin.com/company/soma-loans"
+
+[[params.social]]
+icon = "ion-social-facebook-outline" #ionicon pack v2 : https://ionicons.com/v2/
+link = "https://www.facebook.com/SomaLoans"
+
+
+################################# Plugins #####################################
+# CSS Plugins
+[[params.plugins.css]]
+link = "plugins/bootstrap/css/bootstrap.min.css"
+attributes = "media='screen'"
+
+[[params.plugins.css]]
+link = "plugins/ionicons/css/ionicons.min.css"
+attributes = ""
+
+[[params.plugins.css]]
+link = "plugins/magnific-popup/magnific-popup.min.css"
+attributes = ""
+
+[[params.plugins.css]]
+link = "plugins/slick/slick.css"
+attributes = ""
+
+# JS Plugins
+[[params.plugins.js]]
+link = "plugins/jquery/jquery.min.js"
+attributes = ""
+
+[[params.plugins.js]]
+link = "plugins/bootstrap/js/bootstrap.min.js"
+attributes = ""
+
+[[params.plugins.js]]
+link = "plugins/slick/slick.min.js"
+attributes = ""
+
+[[params.plugins.js]]
+link = "plugins/magnific-popup/magnific-popup.min.js"
+attributes = ""
+
+[[params.plugins.js]]
+link = "plugins/shuffle/shuffle.min.js"
+attributes = ""
+
+[[params.plugins.js]]
+link = "plugins/google-map/gmap.js"
+attributes = "defer"
+
+[[params.plugins.js]]
+link = "plugins/wow.min.js"
+
+################################# English translation #########################
+[languages.en]
+languageName = "English"
+languageCode = "en-US"
+contentDir = "content/english"
+weight = 1
+copyright = "Copyright &copy; 2021 [Soma Loans, Inc.](https://somaloans.com). All Rights Reserved."
+
+# Navigation menus
+# NOTE: Leaf entries linking to content should be defined in the content file's respective front matter.
+[[languages.en.menu.main]]
+hasChildren = true
+name = "More"
+weight = 5
+
+
+################################# Spanish translation ##########################
+[languages.es]
+languageName = "Español"
+languageCode = "es-ES"
+contentDir = "content/spanish"
+weight = 2
+copyright = "Copyright &copy; 2021 [Soma Loans, Inc.](https://somaloans.com). Reservados todos los derechos."
+
+# Navigation menus
+# NOTE: Leaf entries linking to content should be defined in the content file's respective front matter.
+[[languages.es.menu.main]]
+hasChildren = true
+weight = 5
+name = "más"
