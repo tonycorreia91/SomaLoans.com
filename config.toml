@@ -90,7 +90,7 @@ success_image = "images/favicon.png"
 ################################# Google map ##################################
 [params.gmap]
 enable = true
-gmap_api = "AIzaSyD-wt46042sTvziC6HRSLp9PYqn5qH1eB0"
+gmap_api = ""
 map_latitude = "38.5449"
 map_longitude = "-121.7405"
 map_marker = "images/marker.png"
