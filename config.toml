@@ -1,6 +1,6 @@
 ################################# Basic configuration #########################
 # Documentation: https://gohugo.io/getting-started/configuration/#all-configuration-settings
-baseURL = "https://d2onfi2sda5gqy.cloudfront.net"
+baseURL = "example.com"
 title = "Soma | Invest, Borrow, Grow"
 theme = "airspace"
 # Number of posts per page in list view
@@ -17,7 +17,7 @@ googleAnalytics = ""
 [[deployment.targets]]
 #S3 Bucket Deployment
 name = "awsbucket"
-URL = "s3://somaloans.com/?region=us-west-1"
+URL = "s3bucketexample"
 
 
 
